@@ -27,9 +27,15 @@ public class StartPage extends BasePage {
         return waitUntilElementDisplayed(searchField).isDisplayed();
     }
 
-    public FirstSearchResultsPage search(String searchText) {
+    /**
+     * Fills search field with desired text and submits search
+     *
+     * @param searchText String search text
+     * @return PageObject SearchResultsPage
+     */
+    public SearchResultsPage search(String searchText) {
         searchField.sendKeys(searchText);
         searchButton.click();
-        return PageFactory.initElements(webDriver, FirstSearchResultsPage.class);
+        return PageFactory.initElements(webDriver, SearchResultsPage.class);
     }
 }

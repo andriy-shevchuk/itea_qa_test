@@ -1,16 +1,10 @@
 package page;
 
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
- * PageObject BasePage class
- *
- * Created by Admin on 03.06.2017.
- */
 public class BasePage {
 
     /**
@@ -68,19 +62,4 @@ public class BasePage {
         return waitUntilElementDisplayed(element, 15);
     }
 
-    /**
-     * Waits until element is displayed with specific timeout in seconds
-     *
-     * @param element WebElement to wait for
-     * @param timeout max timeout in seconds
-     * @return boolean value. True if element is found, false if not
-     */
-    public boolean isElementDisplayed(WebElement element, int timeout) {
-        try {
-            waitUntilElementDisplayed(element, timeout).isDisplayed();
-        } catch (TimeoutException e) {
-            return false;
-        }
-        return true;
-    }
 }
